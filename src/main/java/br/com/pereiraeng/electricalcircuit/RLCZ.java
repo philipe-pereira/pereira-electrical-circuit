@@ -19,8 +19,7 @@ public class RLCZ extends ArrayList<RLCZ> {
 
 	/**
 	 * Se a rede linear é unária (i.e., composta por um só elemento) o
-	 * {@link RLCZ#getType() tipo} dela é um dos seguintes itens dessa
-	 * enumeração:
+	 * {@link RLCZ#getType() tipo} dela é um dos seguintes itens dessa enumeração:
 	 * 
 	 * <ul>
 	 * <li>R: resistência;</i>
@@ -48,14 +47,12 @@ public class RLCZ extends ArrayList<RLCZ> {
 
 	/**
 	 * Se a rede linear é uma combinação de outras redes lineares, o
-	 * {@link RLCZ#getType() tipo} dela é um dos seguintes itens dessa
-	 * enumeração:
+	 * {@link RLCZ#getType() tipo} dela é um dos seguintes itens dessa enumeração:
 	 * 
 	 * <ul>
 	 * <li>S: associação em série de redes;</i>
 	 * <li>P: associação em paralelo de redes;</i>
-	 * <li>E: associação resultante da transformação estrela-polígono de
-	 * redes.</i>
+	 * <li>E: associação resultante da transformação estrela-polígono de redes.</i>
 	 * </ul>
 	 * 
 	 * @author Philipe PEREIRA
@@ -81,11 +78,9 @@ public class RLCZ extends ArrayList<RLCZ> {
 	/**
 	 * Construtor de um ramo RLC de base
 	 * 
-	 * @param type
-	 *            tipo de ramo (R, L ou C)
-	 * @param value
-	 *            parâmetro do elemento do ramo (resistência em Ohms, indutância
-	 *            em Henries ou capacitância em Faradays)
+	 * @param type  tipo de ramo (R, L ou C)
+	 * @param value parâmetro do elemento do ramo (resistência em Ohms, indutância
+	 *              em Henries ou capacitância em Faradays)
 	 */
 	public RLCZ(LinearType type, double value) {
 		super(0);
@@ -94,13 +89,10 @@ public class RLCZ extends ArrayList<RLCZ> {
 	}
 
 	/**
-	 * Construtor de um ramo composto por uma impedância que varia com a
-	 * frequência
+	 * Construtor de um ramo composto por uma impedância que varia com a frequência
 	 * 
-	 * @param z
-	 *            resposta em frequência, dada na forma de uma tabela de
-	 *            dispersão ordenada que associa a frequência com a impedância
-	 *            complexa, em Ohms
+	 * @param z resposta em frequência, dada na forma de uma tabela de dispersão
+	 *          ordenada que associa a frequência com a impedância complexa, em Ohms
 	 */
 	public RLCZ(TreeMap<Double, Complex> zf) {
 		super(0);
@@ -109,14 +101,12 @@ public class RLCZ extends ArrayList<RLCZ> {
 	}
 
 	/**
-	 * Construtor de um ramo RLC a partir da associação série ou paralelo de
-	 * outros ramos
+	 * Construtor de um ramo RLC a partir da associação série ou paralelo de outros
+	 * ramos
 	 * 
-	 * @param serie
-	 *            <code>true</code> se a associação dos ramos é em série,
-	 *            <code>false</code> se está em paralelo
-	 * @param rlc
-	 *            ramos a serem associados
+	 * @param serie <code>true</code> se a associação dos ramos é em série,
+	 *              <code>false</code> se está em paralelo
+	 * @param rlc   ramos a serem associados
 	 */
 	public RLCZ(boolean serie, RLCZ... rlc) {
 		super(rlc.length);
@@ -139,12 +129,9 @@ public class RLCZ extends ArrayList<RLCZ> {
 	 * Construtor de um ramo RLC que seria obtido a partir da transformação
 	 * estrela-malha entre dois pontos de uma estrela
 	 * 
-	 * @param eA
-	 *            ramo que parte de um dos nós até o centro da estrela
-	 * @param eB
-	 *            ramo que parte do outro nó até o centro da estrela
-	 * @param rlc
-	 *            demais ramos da estrela
+	 * @param eA  ramo que parte de um dos nós até o centro da estrela
+	 * @param eB  ramo que parte do outro nó até o centro da estrela
+	 * @param rlc demais ramos da estrela
 	 */
 	public RLCZ(RLCZ eA, RLCZ eB, RLCZ... rlc) {
 		super(rlc.length + 2);
@@ -231,8 +218,7 @@ public class RLCZ extends ArrayList<RLCZ> {
 	/**
 	 * Função que calcula a impedância equivalente da rede RLC
 	 * 
-	 * @param w
-	 *            frequência angular, em radianos por segundo
+	 * @param w frequência angular, em radianos por segundo
 	 * @return valor da impedância complexa, em Ohms
 	 */
 	public Complex getZ(double w) {
@@ -249,24 +235,23 @@ public class RLCZ extends ArrayList<RLCZ> {
 				double f = w / ExtendedMath.TWO_PI;
 				TreeMap<?, ?> f2z = (TreeMap<?, ?>) value;
 
-				Complex c = (Complex) f2z.get(f);
-				if (c == null) {
+				Complex z = (Complex) f2z.get(f);
+				if (z == null) {
 					// se não achou a frequência, procura a mais próxima
 					Entry<?, ?> e0 = f2z.lastEntry();
-					double maxDelta = (double) e0.getKey();
-					c = (Complex) e0.getValue();
+					Double maxDelta = (Double) e0.getKey();
+					z = (Complex) e0.getValue();
 
 					for (Entry<?, ?> e1 : f2z.entrySet()) {
-						double distance = Math.abs(((double) e1.getKey()) - f);
+						double distance = Math.abs(maxDelta - f);
 						if (distance < maxDelta) {
 							maxDelta = distance;
-							c = (Complex) e1.getValue();
-						} else {
+							z = (Complex) e1.getValue();
+						} else
 							break;
-						}
 					}
 				}
-				return c;
+				return z;
 			}
 		} else if (type instanceof CompType) {
 			CompType ct = (CompType) type;
