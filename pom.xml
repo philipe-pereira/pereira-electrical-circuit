@@ -2,11 +2,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>br.com.pereiraeng</groupId>
 	<artifactId>pereira-electrical-circuit</artifactId>
 	<version>1.0.0</version>
+
 	<name>pereira-electrical-circuit</name>
 	<description>Modelização e análise de circuitos elétricos.</description>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -14,6 +17,7 @@
 		<junit.version>5.10.2</junit.version>
 		<maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>br.com.pereiraeng</groupId>
@@ -45,6 +49,7 @@
 			<artifactId>pereira-xml</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
@@ -61,4 +66,20 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/philipe-pereira/*</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>
+				https://maven.pkg.github.com/philipe-pereira/pereira-electrical-circuit</url>
+		</repository>
+	</distributionManagement>
 </project>
