@@ -6,7 +6,7 @@ import java.awt.geom.Rectangle2D;
 import java.util.Locale;
 
 import br.com.pereiraeng.core.Direction;
-import br.com.pereiraeng.drawing.drawutils.TikZ;
+import br.com.pereiraeng.drawing.TikZ;
 import br.com.pereiraeng.electricalcircuit.CircuitDrawer;
 
 /**

@@ -9,7 +9,7 @@ import java.util.Set;
 
 import br.com.pereiraeng.core.Direction;
 import br.com.pereiraeng.core.Orientation;
-import br.com.pereiraeng.drawing.drawutils.TikZ;
+import br.com.pereiraeng.drawing.TikZ;
 import br.com.pereiraeng.electricalcircuit.CircuitDrawer;
 import br.com.pereiraeng.electricalcircuit.MC;
 import br.com.pereiraeng.graph.Edge;
@@ -53,7 +53,7 @@ public class MagCouple extends CompN {
 	private void setWindings(int windings) {
 		if (windings > 1) {
 			this.mc.setWindings(windings);
-			super.setNs(2 * windings);
+			super.setNumberOfNodes(2 * windings);
 
 			this.polarity = Arrays.copyOf(this.polarity, windings);
 

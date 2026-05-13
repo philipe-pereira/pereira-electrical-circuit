@@ -2,12 +2,11 @@ package br.com.pereiraeng.electricalcircuit;
 
 import java.util.ArrayList;
 import java.util.Map.Entry;
-
 import java.util.TreeMap;
 
-import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.core.ExtendedMath;
 import br.com.pereiraeng.electricalcircuit.solving.CircuitCalc;
+import br.com.pereiraeng.math.Complex;
 
 /**
  * Classe de objetos que representam uma rede linear RLC

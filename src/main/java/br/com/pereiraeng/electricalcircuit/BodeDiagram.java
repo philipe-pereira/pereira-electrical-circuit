@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -26,7 +26,12 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 
-import br.com.pereiraeng.io.IOutils;
+import br.com.pereiraeng.core.ExtendedMath;
+import br.com.pereiraeng.electricalcircuit.components.Comp;
+import br.com.pereiraeng.electricalcircuit.components.ElecElem;
+import br.com.pereiraeng.electricalcircuit.components.No;
+import br.com.pereiraeng.electricalcircuit.components.RLCcomp;
+import br.com.pereiraeng.electricalcircuit.components.Zcomp;
 import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.math.expression.continuous.Parametro;
 import br.com.pereiraeng.math.swing.chart.Chart;
@@ -41,11 +46,6 @@ import br.com.pereiraeng.swing.SwingUtils;
 import br.com.pereiraeng.swing.input.ButtonInput;
 import br.com.pereiraeng.swing.input.MapInput;
 import br.com.pereiraeng.swing.table.EditableTable;
-import br.com.pereiraeng.core.ExtendedMath;
-import br.com.pereiraeng.electricalcircuit.components.ElecElem;
-import br.com.pereiraeng.electricalcircuit.components.No;
-import br.com.pereiraeng.electricalcircuit.components.RLCcomp;
-import br.com.pereiraeng.electricalcircuit.components.Zcomp;
 
 public class BodeDiagram extends JPanel implements ActionListener, TableModelListener, ChangeListener {
 	private static final long serialVersionUID = 1L;

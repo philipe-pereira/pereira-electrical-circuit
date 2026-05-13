@@ -1,10 +1,10 @@
 package br.com.pereiraeng.electricalcircuit.components;
 
+import br.com.pereiraeng.core.EditableFields;
+import br.com.pereiraeng.drawing.ExtDrawable;
 import br.com.pereiraeng.math.Scale2DiOff;
 import br.com.pereiraeng.swing.interfaces.Click;
 import br.com.pereiraeng.swing.interfaces.DesG;
-import br.com.pereiraeng.core.EditableFields;
-import br.com.pereiraeng.drawing.drawutils.ExtDrawable;
 import br.com.pereiraeng.xml.XMLserializable;
 
 /**

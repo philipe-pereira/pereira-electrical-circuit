@@ -8,7 +8,7 @@ import java.util.Set;
 
 import br.com.pereiraeng.core.Direction;
 import br.com.pereiraeng.core.Orientation;
-import br.com.pereiraeng.drawing.drawutils.TikZ;
+import br.com.pereiraeng.drawing.TikZ;
 import br.com.pereiraeng.electricalcircuit.CircuitDrawer;
 import br.com.pereiraeng.graph.Edge;
 import br.com.pereiraeng.graph.Vertex;

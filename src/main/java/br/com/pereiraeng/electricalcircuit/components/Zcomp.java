@@ -7,12 +7,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.core.Orientation;
 import br.com.pereiraeng.electricalcircuit.RLCZ;
 import br.com.pereiraeng.electricalcircuit.RLCZ.CompType;
 import br.com.pereiraeng.electricalcircuit.RLCZ.LinearType;
 import br.com.pereiraeng.graph.Edge;
+import br.com.pereiraeng.math.Complex;
 
 /**
  * Classe abstrata que representa um componente que possui uma dada impedância

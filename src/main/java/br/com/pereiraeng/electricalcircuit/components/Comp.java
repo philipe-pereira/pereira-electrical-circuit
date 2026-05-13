@@ -3,7 +3,7 @@ package br.com.pereiraeng.electricalcircuit.components;
 import java.awt.Graphics2D;
 import java.awt.Point;
 
-import br.com.pereiraeng.drawing.drawutils.VML;
+import br.com.pereiraeng.drawing.VML;
 
 
 /**

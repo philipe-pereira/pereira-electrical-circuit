@@ -14,13 +14,42 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
-import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.core.StringUtils;
-import br.com.pereiraeng.electricalcircuit.components.*;
+import br.com.pereiraeng.electricalcircuit.components.Comp;
+import br.com.pereiraeng.electricalcircuit.components.Comp2;
+import br.com.pereiraeng.electricalcircuit.components.Comp3;
+import br.com.pereiraeng.electricalcircuit.components.Comp4;
+import br.com.pereiraeng.electricalcircuit.components.CompCustom;
+import br.com.pereiraeng.electricalcircuit.components.CompN;
+import br.com.pereiraeng.electricalcircuit.components.CurtoAberto;
+import br.com.pereiraeng.electricalcircuit.components.DT;
+import br.com.pereiraeng.electricalcircuit.components.ElecElem;
+import br.com.pereiraeng.electricalcircuit.components.ElecElemSeed;
+import br.com.pereiraeng.electricalcircuit.components.GeneratorType1;
+import br.com.pereiraeng.electricalcircuit.components.GeneratorType2;
+import br.com.pereiraeng.electricalcircuit.components.Ground;
+import br.com.pereiraeng.electricalcircuit.components.MagCouple;
+import br.com.pereiraeng.electricalcircuit.components.Meter;
+import br.com.pereiraeng.electricalcircuit.components.No;
 import br.com.pereiraeng.electricalcircuit.components.No.NodeType;
+import br.com.pereiraeng.electricalcircuit.components.Quadripole;
+import br.com.pereiraeng.electricalcircuit.components.RLCcomp;
+import br.com.pereiraeng.electricalcircuit.components.SelectionSwitch;
+import br.com.pereiraeng.electricalcircuit.components.Source;
+import br.com.pereiraeng.electricalcircuit.components.Switch;
 import br.com.pereiraeng.electricalcircuit.components.Switch.TensionBlock;
+import br.com.pereiraeng.electricalcircuit.components.TransfIdeal;
+import br.com.pereiraeng.electricalcircuit.components.Wattmeter;
+import br.com.pereiraeng.electricalcircuit.components.ZfComp;
+import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.xml.XMLadapter;
 
+/**
+ * Classe do objeto que lê um circuito a partir de sua descrição em um arquivo
+ * XML
+ * 
+ * @author Philipe PEREIRA
+ */
 public class XMLcircuitReader extends XMLadapter {
 
 	/**
@@ -171,10 +200,10 @@ public class XMLcircuitReader extends XMLadapter {
 				input = new Complex(Double.parseDouble(c[0]), Double.parseDouble(c[1]));
 				break;
 			case FOURIER:
-//				input = FourierCircInput.toFourier(s);
+//				input = FourierCircInput.toFourier(s); TODO
 				break;
 			case LAPLACE:
-//				input = LaplaceCircInput.toLaplace(s);
+//				input = LaplaceCircInput.toLaplace(s); TODO
 				break;
 			}
 		}

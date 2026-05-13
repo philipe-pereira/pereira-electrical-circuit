@@ -5,11 +5,11 @@ import java.awt.Graphics2D;
 import java.awt.geom.Area;
 import java.awt.geom.Rectangle2D;
 
-import br.com.pereiraeng.math.Complex;
-import br.com.pereiraeng.math.Multiplicador;
 import br.com.pereiraeng.core.Direction;
 import br.com.pereiraeng.core.ExtendedMath;
-import br.com.pereiraeng.drawing.drawutils.DrawingUtils;
+import br.com.pereiraeng.drawing.DrawingUtils;
+import br.com.pereiraeng.math.Complex;
+import br.com.pereiraeng.math.Multiplicador;
 
 public class CurtoAberto extends Comp2 {
 

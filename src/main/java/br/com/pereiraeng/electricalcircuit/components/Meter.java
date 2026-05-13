@@ -6,11 +6,11 @@ import java.awt.geom.Area;
 import java.awt.geom.Rectangle2D;
 import java.util.Locale;
 
-import br.com.pereiraeng.math.Complex;
-import br.com.pereiraeng.math.Multiplicador;
 import br.com.pereiraeng.core.ExtendedMath;
 import br.com.pereiraeng.core.Orientation;
-import br.com.pereiraeng.drawing.drawutils.TikZ;
+import br.com.pereiraeng.drawing.TikZ;
+import br.com.pereiraeng.math.Complex;
+import br.com.pereiraeng.math.Multiplicador;
 
 /**
  * Classe do objeto que representa um medidor elétrico de dois terminais

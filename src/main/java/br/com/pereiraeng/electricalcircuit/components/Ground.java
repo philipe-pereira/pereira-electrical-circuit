@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.geom.Area;
 import java.awt.geom.Rectangle2D;
 
-import br.com.pereiraeng.drawing.drawutils.TikZ;
+import br.com.pereiraeng.drawing.TikZ;
 import br.com.pereiraeng.electricalcircuit.CircuitDrawer;
 
 /**

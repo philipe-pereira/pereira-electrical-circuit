@@ -8,12 +8,12 @@ import java.awt.Graphics2D;
 
 import javax.swing.Icon;
 
+import br.com.pereiraeng.core.Direction;
+import br.com.pereiraeng.core.Orientation;
+import br.com.pereiraeng.drawing.DrawingUtils;
 import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.math.Multiplicador;
 import br.com.pereiraeng.math.Vec;
-import br.com.pereiraeng.core.Direction;
-import br.com.pereiraeng.core.Orientation;
-import br.com.pereiraeng.drawing.drawutils.DrawingUtils;
 
 /**
  * Classe com as funções que fazem desenhos de elementos de circuito elétrico

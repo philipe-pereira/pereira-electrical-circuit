@@ -16,39 +16,37 @@ public abstract class CompN extends Comp4 {
 
 	public CompN(String label, int nn) {
 		super(label);
-		setNs(nn);
+		setNumberOfNodes(nn);
 	}
 
-	public int getNs() {
-		return (nn == null ? 0 : this.nn.size()) + 4;
+	public int getNumberOfNodes() {
+		return (extraNodes == null ? 0 : this.extraNodes.size()) + 4;
 	}
 
-	public void setNs(int ns) {
-		ns -= 4;
-		if (nn == null) {
+	public void setNumberOfNodes(int numberOfNodes) {
+		numberOfNodes -= 4;
+		if (extraNodes == null) {
 			// ainda não há tabela de nós
-			if (ns > 0) {
-				this.nn = new ArrayList<>(ns);
-				this.pnn = new ArrayList<>(ns);
+			if (numberOfNodes > 0) {
+				this.extraNodes = new ArrayList<>(numberOfNodes);
+				this.pnn = new ArrayList<>(numberOfNodes);
 
-				for (int i = 0; i < ns; i++) {
-					this.nn.add(getNo());
+				for (int i = 0; i < numberOfNodes; i++) {
+					this.extraNodes.add(getNo());
 					this.pnn.add(0);
 				}
 			}
 		} else {
-			if (ns > nn.size()) {
-				// mais nós do que já existe
-				this.nn.ensureCapacity(ns);
-				this.pnn.ensureCapacity(ns);
-				for (int i = 0; i < ns - nn.size(); i++) {
-					this.nn.add(getNo());
+			if (numberOfNodes > extraNodes.size()) { // mais nós do que já existe
+				this.extraNodes.ensureCapacity(numberOfNodes);
+				this.pnn.ensureCapacity(numberOfNodes);
+				for (int i = 0; i < numberOfNodes - extraNodes.size(); i++) {
+					this.extraNodes.add(getNo());
 					this.pnn.add(0);
 				}
-			} else {
-				// menos nós do que já existe
-				for (int i = 0; i < nn.size() - ns; i++) {
-					this.nn.remove(this.nn.size() - 1);
+			} else { // menos nós do que já existe
+				while (extraNodes.size() > numberOfNodes) {
+					this.extraNodes.remove(this.extraNodes.size() - 1);
 					this.pnn.remove(this.pnn.size() - 1);
 				}
 			}
@@ -57,28 +55,28 @@ public abstract class CompN extends Comp4 {
 
 	// ------------------------ NO N ------------------------
 
-	protected ArrayList<No> nn;
+	protected ArrayList<No> extraNodes;
 
-	public void setNN(No nn, int index) {
+	public void setNN(No no, int index) {
 		switch (index) {
 		case 0:
-			this.setNo(nn);
+			this.setNo(no);
 			break;
 		case 1:
-			this.setN2(nn);
+			this.setN2(no);
 			break;
 		case 2:
-			this.setN3(nn);
+			this.setN3(no);
 			break;
 		case 3:
-			this.setN4(nn);
+			this.setN4(no);
 			break;
 		default:
 			index -= 4;
-			if (this.nn.get(index) != null)
-				this.nn.get(index).remove(this);
-			this.nn.set(index, nn);
-			this.nn.get(index).add(this);
+			if (this.extraNodes.get(index) != null)
+				this.extraNodes.get(index).remove(this);
+			this.extraNodes.set(index, no);
+			this.extraNodes.get(index).add(this);
 			break;
 		}
 	}
@@ -99,9 +97,9 @@ public abstract class CompN extends Comp4 {
 			break;
 		default:
 			index -= 4;
-			if (this.nn.get(index) != null)
-				this.nn.get(index).remove(this);
-			this.nn.set(index, null);
+			if (this.extraNodes.get(index) != null)
+				this.extraNodes.get(index).remove(this);
+			this.extraNodes.set(index, null);
 			break;
 		}
 	}
@@ -117,7 +115,7 @@ public abstract class CompN extends Comp4 {
 		case 3:
 			return this.getN4();
 		default:
-			return this.nn.get(index - 4);
+			return this.extraNodes.get(index - 4);
 		}
 	}
 
@@ -165,7 +163,7 @@ public abstract class CompN extends Comp4 {
 		if (super.contains(v))
 			return true;
 		else
-			for (No no : this.nn)
+			for (No no : this.extraNodes)
 				if (v.equals(no))
 					return true;
 		return false;
@@ -174,7 +172,7 @@ public abstract class CompN extends Comp4 {
 	@Override
 	public Set<? extends Vertex> getVertices() {
 		Set<Vertex> out = new HashSet<>(super.getVertices());
-		for (No no : this.nn)
+		for (No no : this.extraNodes)
 			out.add(no);
 		return out;
 	}

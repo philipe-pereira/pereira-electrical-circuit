@@ -1,7 +1,7 @@
 package br.com.pereiraeng.electricalcircuit.solving;
 
-import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.core.ExtendedMath;
+import br.com.pereiraeng.math.Complex;
 
 /**
  * Classe que reúne métodos de cálculo de circuitos elétricos
@@ -92,7 +92,7 @@ public class CircuitCalc {
 	}
 
 	/**
-	 * Função que calcula a corrente de base
+	 * Função que calcula a corrente de base para sistemas trifásicos
 	 * 
 	 * @param vb tensão de base, em V
 	 * @param sb potência aparente de base, em VA

@@ -9,14 +9,23 @@ import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import br.com.pereiraeng.core.collections.ArrayUtils;
+import br.com.pereiraeng.electricalcircuit.components.Comp2;
+import br.com.pereiraeng.electricalcircuit.components.CurtoAberto;
+import br.com.pereiraeng.electricalcircuit.components.ElecElem;
+import br.com.pereiraeng.electricalcircuit.components.GeneratorType1;
+import br.com.pereiraeng.electricalcircuit.components.GeneratorType2;
+import br.com.pereiraeng.electricalcircuit.components.Ground;
+import br.com.pereiraeng.electricalcircuit.components.Meter;
+import br.com.pereiraeng.electricalcircuit.components.Meter.GrandezaMed;
+import br.com.pereiraeng.electricalcircuit.components.No;
+import br.com.pereiraeng.electricalcircuit.components.RLCcomp;
+import br.com.pereiraeng.electricalcircuit.components.Source;
+import br.com.pereiraeng.electricalcircuit.components.Wattmeter;
 import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.math.Vec;
-import br.com.pereiraeng.core.collections.ArrayUtils;
-import br.com.pereiraeng.electricalcircuit.components.*;
-import br.com.pereiraeng.electricalcircuit.components.Meter.GrandezaMed;
-
-import java.util.Set;
 
 /**
  * Classe das funções que permitem a resolução do circuito elétrico no domínio
@@ -132,14 +141,16 @@ public class ACnodalAnalysis {
 			svs = svl.toArray(new Source[svl.size()]);
 		}
 
+		//@formatter:off
 		// matriz de admitância
-		// [ | ] [ ] [ ]
-		// [ | 1] [ ] [ ]
-		// [ Y | 0] [vn] [Ig]
-		// [ |-1] [ ] = [ ]
-		// [ | ] [ ] [ ]
+		// [        |  ] [  ]   [  ]
+		// [        | 1] [  ]   [  ]
+		// [ Y      | 0] [vn]   [Ig]
+		// [        |-1] [  ] = [  ]
+		// [        |  ] [  ]   [  ]
 		// --------------------------
-		// [ 1 0 -1 | 0] [ig] [Vg]
+		// [ 1 0 -1 | 0] [ig]   [Vg]
+	    //formatter:on
 		Complex[][] g = new Complex[nos.length + svs.length][nos.length + svs.length];
 		for (int i = 0; i < g.length; i++)
 			for (int j = 0; j < g.length; j++)

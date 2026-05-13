@@ -7,13 +7,13 @@ import java.awt.geom.Rectangle2D;
 import java.util.Locale;
 import java.util.Set;
 
-import br.com.pereiraeng.math.Complex;
-import br.com.pereiraeng.math.Multiplicador;
 import br.com.pereiraeng.core.Orientation;
-import br.com.pereiraeng.drawing.drawutils.TikZ;
+import br.com.pereiraeng.drawing.TikZ;
 import br.com.pereiraeng.electricalcircuit.solving.CircuitCalc;
 import br.com.pereiraeng.graph.Edge;
 import br.com.pereiraeng.graph.Vertex;
+import br.com.pereiraeng.math.Complex;
+import br.com.pereiraeng.math.Multiplicador;
 
 public class Wattmeter extends Comp3 {
 

@@ -8,16 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import br.com.pereiraeng.math.Scale2Dm;
 import br.com.pereiraeng.core.Orientation;
 import br.com.pereiraeng.core.collections.ListUtils;
-import br.com.pereiraeng.drawing.drawutils.LID;
-import br.com.pereiraeng.drawing.drawutils.SVG;
-import br.com.pereiraeng.drawing.drawutils.TikZ;
-import br.com.pereiraeng.drawing.drawutils.VML;
+import br.com.pereiraeng.drawing.LID;
+import br.com.pereiraeng.drawing.SVG;
+import br.com.pereiraeng.drawing.TikZ;
+import br.com.pereiraeng.drawing.VML;
 import br.com.pereiraeng.graph.Edge;
 import br.com.pereiraeng.graph.Hyperedge;
 import br.com.pereiraeng.graph.Vertex;
+import br.com.pereiraeng.math.Scale2Dm;
 
 /**
  * Classe dos objetos que representam componentes de circuito customizados, cuja

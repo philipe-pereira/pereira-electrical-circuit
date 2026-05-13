@@ -6,11 +6,11 @@ import java.awt.geom.Rectangle2D;
 import java.util.Locale;
 import java.util.Set;
 
-import br.com.pereiraeng.math.Complex;
-import br.com.pereiraeng.math.Vec;
 import br.com.pereiraeng.core.Orientation;
 import br.com.pereiraeng.graph.Edge;
 import br.com.pereiraeng.graph.Vertex;
+import br.com.pereiraeng.math.Complex;
+import br.com.pereiraeng.math.Vec;
 
 /**
  * Classe do objeto que representa um quadripolo do circuito

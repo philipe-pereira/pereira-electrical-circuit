@@ -4,10 +4,10 @@ import java.awt.Graphics2D;
 import java.awt.geom.Area;
 import java.awt.geom.Rectangle2D;
 
-import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.core.Direction;
-import br.com.pereiraeng.drawing.drawutils.TikZ;
+import br.com.pereiraeng.drawing.TikZ;
 import br.com.pereiraeng.electricalcircuit.CircuitDrawer;
+import br.com.pereiraeng.math.Complex;
 
 public class Source extends Comp2 {
 
@@ -36,7 +36,7 @@ public class Source extends Comp2 {
 	 * Usado somente para {@link #wf forma de onda} {@link GeneratorType1#FOURIER} e
 	 * {@link GeneratorType1#LAPLACE}
 	 */
-//	private LinGen linGen;
+//	private LinGen linGen; TODO entender o que eu queria com isso
 
 	public Source(String label, GeneratorType1 wf, GeneratorType2 output) {
 		super(label);

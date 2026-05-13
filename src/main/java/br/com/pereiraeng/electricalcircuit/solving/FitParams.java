@@ -6,18 +6,17 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
 
-import br.com.pereiraeng.math.Complex;
-import br.com.pereiraeng.math.Partition;
 import br.com.pereiraeng.core.ExtendedMath;
 import br.com.pereiraeng.electricalcircuit.RLCZ;
 import br.com.pereiraeng.electricalcircuit.components.ElecElem;
 import br.com.pereiraeng.electricalcircuit.components.No;
 import br.com.pereiraeng.electricalcircuit.components.Zcomp;
 import br.com.pereiraeng.electricalcircuit.components.ZfComp;
-
-import java.util.Set;
-import java.util.TreeMap;
+import br.com.pereiraeng.math.Complex;
+import br.com.pereiraeng.math.Partition;
 
 public class FitParams {
 

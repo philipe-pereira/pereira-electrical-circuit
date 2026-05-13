@@ -4,13 +4,13 @@ import java.awt.Graphics2D;
 import java.awt.geom.Area;
 import java.awt.geom.Rectangle2D;
 
-import br.com.pereiraeng.math.Complex;
 import br.com.pereiraeng.core.ExtendedMath;
 import br.com.pereiraeng.core.Orientation;
-import br.com.pereiraeng.drawing.drawutils.TikZ;
+import br.com.pereiraeng.drawing.TikZ;
 import br.com.pereiraeng.electricalcircuit.CircuitDrawer;
 import br.com.pereiraeng.electricalcircuit.RLCZ;
 import br.com.pereiraeng.electricalcircuit.RLCZ.LinearType;
+import br.com.pereiraeng.math.Complex;
 
 /**
  * Classe do objeto que representa um elemento linear do circuito (um resistor,

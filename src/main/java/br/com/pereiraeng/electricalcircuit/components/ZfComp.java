@@ -5,11 +5,10 @@ import java.awt.geom.Area;
 import java.awt.geom.Rectangle2D;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import br.com.pereiraeng.math.Complex;
-import br.com.pereiraeng.core.Orientation;
-
 import java.util.TreeMap;
+
+import br.com.pereiraeng.core.Orientation;
+import br.com.pereiraeng.math.Complex;
 
 public class ZfComp extends Zcomp {
 

@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Set;
 
 import br.com.pereiraeng.core.collections.ListUtils;
-import br.com.pereiraeng.drawing.drawutils.LID;
-import br.com.pereiraeng.drawing.drawutils.LID.DrawAction;
+import br.com.pereiraeng.drawing.LID;
+import br.com.pereiraeng.drawing.LID.DrawAction;
 
 /**
  * Classe dos objetos sementes dos componentes customizados. Estes objetos

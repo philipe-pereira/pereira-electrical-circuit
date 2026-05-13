@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.util.Collection;
 
-import br.com.pereiraeng.drawing.drawutils.SVG;
+import br.com.pereiraeng.drawing.SVG;
 import br.com.pereiraeng.electricalcircuit.components.ElecElem;
 import br.com.pereiraeng.math.Scale2Di;
 import br.com.pereiraeng.swing.LeafOG;
@@ -22,6 +22,11 @@ public class Schematic extends LeafOG<ElecElem> {
 
 	private boolean editable;
 
+	/**
+	 * Construtor do gráfico que representa uma grade em que elementos de circuito
+	 * 
+	 * @param editable <code>true</code> se os elementos puderem ser movidos
+	 */
 	public Schematic(boolean editable) {
 		super(Color.WHITE, 1, 1, true, new Scale2Di(10, 10));
 		this.setEditable(editable);
